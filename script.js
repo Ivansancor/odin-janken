@@ -14,18 +14,18 @@ function computerPlay(){
 }
 // console.log(computerGuess);
 
+
+const btnone = document.getElementById('btnone');
+const btntwo = document.getElementById('btntwo');
+const btnthree = document.getElementById('btnthree');
+
 let userGuess = "";
-function userGuessValidity(){
-    let preuserGuess = prompt("Enter your guess");
-    let regexOne = /^rock$/i;
-    let regexTwo = /^paper$/i;
-    let regexThree = /^scissors$/i;
-    if(preuserGuess.match(regexOne) || preuserGuess.match(regexTwo) || preuserGuess.match(regexThree)){
-        return userGuess = preuserGuess.toLowerCase();
-    } else {alert("Invalid choice!");
-    userGuessValidity();
-    }
-}
+
+btnone.addEventListener('click', () => userGuess = "rock");
+btntwo.addEventListener('click', () => userGuess = "paper");
+btnthree.addEventListener('click', () => userGuess = "scissors");
+
+
 
 let compWins = 0;
 let userWins = 0;
@@ -57,7 +57,7 @@ console.log("Let's play Rock, Paper, Scissors, 5 rounds see who wins more!");
 for( let i = 1; i < 6; i++){
     console.log(`\nRound ${i}!`);
     computerPlay();
-    userGuessValidity();
+    //userPlay();
     console.log(playRound(computerGuess, userGuess));
     console.log(`Computer: ${compWins}, Player: ${userWins}.`)
 }
